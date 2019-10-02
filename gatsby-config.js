@@ -1,10 +1,15 @@
 require(`dotenv`).config({ path: `.env` })
 
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Scott Strubberg’s Portfolio`,
+    siteUrl: `https://strubberg.netlify.com`,
+    description: `This is a portfolio that represents the career of Scott Strubberg, through all of it’s many iterations.`,
+    author: `Scott Strubberg <sstrubberg@gmail.com>`,
+    linkedIn: `https://www.linkedin.com/in/sstrubberg/`,
+    github: `https://github.com/sstrubberg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,8 +41,42 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: [path.resolve(__dirname, "node_modules")],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+              withWebp: true,
+            },
+          },
+        ],
+      },
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-smartypants",
+            options: {
+              dashes: "oldschool",
+              quotes: "true",
+            },
+          },
+        ],
       },
     },
   ],

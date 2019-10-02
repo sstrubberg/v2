@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
+import "../styles/global.scss"
 import SEO from "../components/seo"
 
 const IndexPage = () => {

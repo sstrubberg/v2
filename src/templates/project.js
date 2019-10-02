@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 const ProjectTemplate = ({ data, pageContext }) => {
   const { title } = data.contentfulProject
@@ -9,7 +10,9 @@ const ProjectTemplate = ({ data, pageContext }) => {
 
   return (
     <>
-      <div>{title}</div>
+      <Layout>
+        <div>{title}</div>
+      </Layout>
     </>
   )
 }

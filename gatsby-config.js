@@ -1,6 +1,6 @@
 require(`dotenv`).config({ path: `.env` })
 
-const path = require("path")
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        includePaths: [path.resolve(__dirname, "node_modules")],
+        includePaths: [path.resolve(__dirname, 'node_modules')],
       },
     },
     {
@@ -65,15 +65,11 @@ module.exports = {
               withWebp: true,
             },
           },
-        ],
-      },
-      options: {
-        plugins: [
           {
-            resolve: "gatsby-remark-smartypants",
+            resolve: 'gatsby-remark-smartypants',
             options: {
-              dashes: "oldschool",
-              quotes: "true",
+              dashes: 'oldschool',
+              quotes: 'true',
             },
           },
         ],

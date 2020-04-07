@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
-const ProjectTemplate = ({ data, pageContext }) => {
-  const { title } = data.contentfulProject
+const ProjectTemplate = ({ data, pageContext }) => { // eslint-disable-line
+  const { title } = data.contentfulProject // eslint-disable-line
 
   // const previous = pageContext.prev
   // const next = pageContext.next

@@ -5,3 +5,5 @@
 @include carbon--type-reset();
 @include carbon--font-face-mono();
 @include carbon--font-face-sans();
+
+@import '@carbon/type/scss/styles';

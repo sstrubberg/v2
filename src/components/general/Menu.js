@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { display04 } from '@carbon/type'
 
 const Header = styled.header``
 

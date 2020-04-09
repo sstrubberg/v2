@@ -109,10 +109,6 @@ export const globalStyles = css`
     display: block;
   }
 
-  @include carbon--type-reset();
-  @include carbon--font-face-mono();
-  @include carbon--font-face-sans();
-
   body {
     line-height: 1;
   }

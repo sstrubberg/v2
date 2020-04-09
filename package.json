@@ -8,14 +8,17 @@
     "@carbon/type": "^10.9.3",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.20.12",
     "gatsby-cli": "^2.11.5",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-remark-images-contentful": "^2.2.2",
     "gatsby-remark-smartypants": "^2.2.1",
     "gatsby-source-contentful": "^2.2.6",
@@ -27,7 +30,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "styled-components": "^4.4.1"
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

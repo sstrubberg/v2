@@ -5,12 +5,14 @@ import { motion } from 'framer-motion'
 
 const Header = styled.header`
   font-family: ${props => props.theme.fonts.body};
+  background: ${props => props.theme.colors.background};
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 99;
   max-height: ${props => (props.open ? '100%' : '60px')};
 `
 
@@ -21,16 +23,15 @@ const Nav = styled.nav`
   height: 100%;
   width: 100%;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    display: block;
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 3rem;
     padding-left: 3rem;
-    display: block;
   }
 `
 
 const UnOrderedList = styled.ul`
-  position: relative;
   pointer-events: ${props => (props.open ? 'auto' : 'none')};
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     padding: 0;
@@ -46,10 +47,17 @@ const ListItem = styled(motion.li)`
   justify-content: center;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     opacity: 1 !important;
+    pointer-events: auto;
   }
   &:first-of-type {
+    position: fixed;
+    left: 1.5rem;
+    top: 0;
     pointer-events: auto;
     opacity: 1 !important;
+    @media screen and (min-width: ${props => props.theme.responsive.md}) {
+      position: relative;
+    }
   }
 `
 

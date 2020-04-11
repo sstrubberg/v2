@@ -11,7 +11,7 @@ const Header = styled.header`
   bottom: 0;
   left: 0;
   width: 100%;
-  /* max-height: ${props => (props.open ? '100%' : '60px')}; */
+  max-height: ${props => (props.open ? '100%' : '60px')};
 `
 
 const Nav = styled.nav`
@@ -31,6 +31,7 @@ const Nav = styled.nav`
 
 const UnOrderedList = styled.ul`
   position: relative;
+  pointer-events: ${props => (props.open ? 'auto' : 'none')};
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     padding: 0;
     display: grid;
@@ -43,6 +44,13 @@ const UnOrderedList = styled.ul`
 const ListItem = styled(motion.li)`
   display: flex;
   justify-content: center;
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    opacity: 1 !important;
+  }
+  &:first-of-type {
+    pointer-events: auto;
+    opacity: 1 !important;
+  }
 `
 
 const Toggle = styled.button`
@@ -75,7 +83,7 @@ const Menu = () => {
   }
 
   return (
-    <Header>
+    <Header open={isOpen}>
       <Nav>
         <Toggle onClick={toggle} aria-label="Toggle Menu"></Toggle>
         <UnOrderedList>
@@ -86,10 +94,18 @@ const Menu = () => {
           >
             <Link to="/">Scott Strubberg</Link>
           </ListItem>
-          <ListItem>
+          <ListItem
+            initial={false}
+            variants={listItemVariants}
+            animate={isOpen ? 'open' : 'closed'}
+          >
             <Link to="/portfolio">Portfolio</Link>
           </ListItem>
-          <ListItem>
+          <ListItem
+            initial={false}
+            variants={listItemVariants}
+            animate={isOpen ? 'open' : 'closed'}
+          >
             <Link to="/contact">Contact</Link>
           </ListItem>
         </UnOrderedList>

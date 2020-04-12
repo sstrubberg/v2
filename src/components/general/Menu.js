@@ -68,13 +68,7 @@ const Toggle = styled.button`
   top: 0;
   bottom: 0;
   right: 1.5rem;
-  /* width: 1.5rem; */
   height: 60px;
-  /* margin: 0; */
-  /* padding: 0; */
-  /* z-index: 999; */
-  /* background-color: ${props => props.theme.colors.background}; */
-  /* border-color: ${props => props.theme.colors.background}; */
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: none;
   }

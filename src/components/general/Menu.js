@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 const Header = styled.header`
   font-family: ${props => props.theme.fonts.body};
   background: ${props => props.theme.colors.background};
+  transition: 0.4s ease-out;
   position: fixed;
   top: 0;
   right: 0;
@@ -67,8 +68,13 @@ const Toggle = styled.button`
   top: 0;
   bottom: 0;
   right: 1.5rem;
-  width: 1.5rem;
+  /* width: 1.5rem; */
   height: 60px;
+  /* margin: 0; */
+  /* padding: 0; */
+  /* z-index: 999; */
+  /* background-color: ${props => props.theme.colors.background}; */
+  /* border-color: ${props => props.theme.colors.background}; */
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: none;
   }
@@ -79,6 +85,7 @@ const Menu = () => {
 
   function toggle() {
     setIsOpen(!isOpen)
+    document.querySelector('.hamburger--collapse').classList.toggle('is-active')
   }
 
   const listItemVariants = {
@@ -93,7 +100,16 @@ const Menu = () => {
   return (
     <Header open={isOpen}>
       <Nav>
-        <Toggle onClick={toggle} aria-label="Toggle Menu"></Toggle>
+        <Toggle
+          open={isOpen}
+          onClick={toggle}
+          className="hamburger hamburger--collapse"
+          type="button"
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </Toggle>
         <UnOrderedList>
           <ListItem
             initial={false}

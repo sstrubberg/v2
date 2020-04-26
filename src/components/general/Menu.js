@@ -62,13 +62,16 @@ const ListItem = styled(motion.li)`
   }
 `
 
-const Toggle = styled.button`
-  cursor: pointer;
+const ToggleWrapper = styled.div`
+  height: 60px;
   position: absolute;
-  top: 0;
+  top: 1rem;
   bottom: 0;
   right: 1.5rem;
-  height: 60px;
+`
+
+const Toggle = styled.button`
+  cursor: pointer;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: none;
   }
@@ -94,16 +97,18 @@ const Menu = () => {
   return (
     <Header open={isOpen}>
       <Nav>
-        <Toggle
-          open={isOpen}
-          onClick={toggle}
-          className="hamburger hamburger--collapse"
-          type="button"
-        >
-          <span className="hamburger-box">
-            <span className="hamburger-inner"></span>
-          </span>
-        </Toggle>
+        <ToggleWrapper>
+          <Toggle
+            open={isOpen}
+            onClick={toggle}
+            className="hamburger hamburger--collapse"
+            type="button"
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
+          </Toggle>
+        </ToggleWrapper>
         <UnOrderedList>
           <ListItem
             initial={false}

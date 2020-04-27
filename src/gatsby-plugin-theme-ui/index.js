@@ -2,6 +2,7 @@ export default {
   colors: {
     text: '#ffffff', // white
     background: '#161616', // gray100
+    hover: '#0f62fe', // blue60
   },
   fonts: {
     body:

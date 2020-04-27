@@ -46,11 +46,14 @@ const UnOrderedList = styled.ul`
 const ListItem = styled(motion.li)`
   display: flex;
   justify-content: center;
+  padding-top: 1.3rem;
+  /* padding-bottom: 0.5rem; */
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     opacity: 1 !important;
     pointer-events: auto;
   }
   &:first-of-type {
+    text-align: left;
     position: fixed;
     left: 1.5rem;
     top: 0;
@@ -58,6 +61,17 @@ const ListItem = styled(motion.li)`
     opacity: 1 !important;
     @media screen and (min-width: ${props => props.theme.responsive.md}) {
       position: relative;
+      left: 0rem;
+      grid-column: 1 / span 10;
+      justify-self: start;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.text};
+    transition: color 0.3s;
+    :hover {
+      color: ${props => props.theme.colors.hover};
     }
   }
 `
@@ -109,7 +123,7 @@ const Menu = () => {
             </span>
           </Toggle>
         </ToggleWrapper>
-        <UnOrderedList>
+        <UnOrderedList open={isOpen}>
           <ListItem
             initial={false}
             variants={listItemVariants}

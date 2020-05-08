@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 
 const ProjectTemplate = ({ data, pageContext }) => { // eslint-disable-line
   const { title } = data.contentfulProject // eslint-disable-line
@@ -10,9 +9,7 @@ const ProjectTemplate = ({ data, pageContext }) => { // eslint-disable-line
 
   return (
     <>
-      <Layout>
-        <div>{title}</div>
-      </Layout>
+      <div>{title}</div>
     </>
   )
 }

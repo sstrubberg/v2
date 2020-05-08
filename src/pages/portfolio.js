@@ -1,16 +1,39 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import '../styles/global.scss'
 import SEO from '../components/seo'
 
-const Portfolio = () => (
-  <Layout>
-    <SEO title="Portfolio" />
-    <h1>Hi from the Portfolio page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const PortfolioPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulProject(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            slug
+            title
+            publishedDate(formatString: "MMMM Do, YYYY")
+          }
+        }
+      }
+    }
+  `)
 
-export default Portfolio
+  return (
+    <>
+      <SEO title="Portfolio" />
+      <ol>
+        {data.allContentfulProject.edges.map(edge => (
+          <li>
+            <Link to={`${edge.node.slug}`}>
+              <h2>{edge.node.title}</h2>
+              <p></p>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </>
+  )
+}
+
+export default PortfolioPage

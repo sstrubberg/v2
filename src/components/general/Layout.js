@@ -9,6 +9,12 @@ const Root = styled.div`
   padding-top: 60px;
 `
 
+const Footer = styled.footer`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+`
+
 const Layout = ({ children, props }) => {
   function handleFirstTab() {}
   return (
@@ -22,11 +28,11 @@ const Layout = ({ children, props }) => {
       <div {...props}>
         <Root>{children}</Root>
       </div>
-      <footer>
+      <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      </Footer>
     </>
   )
 }

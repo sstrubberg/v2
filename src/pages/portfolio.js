@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-
+import styled from '@emotion/styled'
 import '../styles/global.scss'
 import SEO from '../components/seo'
+
+const H2 = styled.h2`
+  color: white;
+`
 
 const PortfolioPage = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +30,7 @@ const PortfolioPage = () => {
         {data.allContentfulProject.edges.map(edge => (
           <li>
             <Link to={`${edge.node.slug}`}>
-              <h2>{edge.node.title}</h2>
+              <H2>{edge.node.title}</H2>
               <p></p>
             </Link>
           </li>

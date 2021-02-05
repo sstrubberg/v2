@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-const ProjectTemplate = ({ data, pageContext }) => { // eslint-disable-line
-  const { title } = data.contentfulProject // eslint-disable-line
+const ProjectTemplate = ({ pageContext }) => {
+  const { title } = pageContext
+  console.log(pageContext)
 
   // const previous = pageContext.prev
   // const next = pageContext.next
@@ -10,18 +11,9 @@ const ProjectTemplate = ({ data, pageContext }) => { // eslint-disable-line
   return (
     <>
       <div>{title}</div>
+      <div>test</div>
     </>
   )
 }
-
-export const query = graphql`
-  query($slug: String!) {
-    contentfulProject(slug: { eq: $slug }) {
-      slug
-      title
-      publishedDate(formatString: "MMMM Do, YYYY")
-    }
-  }
-`
 
 export default ProjectTemplate

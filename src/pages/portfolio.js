@@ -11,12 +11,12 @@ const H2 = styled.h2`
 const PortfolioPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProject(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulProject(sort: { fields: date, order: DESC }) {
         edges {
           node {
             slug
             title
-            publishedDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
           }
         }
       }
@@ -28,7 +28,7 @@ const PortfolioPage = () => {
       <SEO title="Portfolio" />
       <ol>
         {data.allContentfulProject.edges.map(edge => (
-          <li>
+          <li key={edge.node.slug}>
             <Link to={`${edge.node.slug}`}>
               <H2>{edge.node.title}</H2>
               <p></p>

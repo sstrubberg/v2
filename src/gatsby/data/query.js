@@ -7,6 +7,9 @@ module.exports.data = {
           slug
           title
           date(formatString: "MMMM DD, YYYY")
+          content {
+            json
+          }
         }
       }
     }

@@ -9,11 +9,6 @@ import useContentfulImage from '../../util/hooks/useContentfulImage'
 const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-    // [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-    //   const imgURL = node.data.target.fields.file['en-US'].url
-    //   const altTag = node.data.target.fields.description['en-US']
-    //   return <img alt={altTag} src={`https:${imgURL}`} />
-    // },
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const fluid = useContentfulImage(
         node.data.target.fields.file['en-US'].url

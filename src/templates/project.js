@@ -5,7 +5,6 @@ import Content from '../components/templates/Content'
 const ProjectTemplate = ({ pageContext }) => {
   const { title, content } = pageContext
 
-  // console.log(content.json)
   // const previous = pageContext.prev
   // const next = pageContext.next
 

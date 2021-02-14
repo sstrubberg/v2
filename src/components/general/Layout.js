@@ -10,7 +10,6 @@ const Root = styled.div`
 `
 
 const Footer = styled.footer`
-  position: fixed;
   left: 0;
   bottom: 0;
 `

@@ -1,14 +1,17 @@
 export default {
+  // https://colorhunt.co/palette/2763
   colors: {
-    text: '#ffffff', // white
-    background: '#161616', // gray100
-    hover: '#0f62fe', // blue60
+    text: '#eeeeee', // cool light gray
+    background: '#222831', // almost black
+    hover: '#00CBD6', // kara green
   },
   fonts: {
     body:
       '"IBM Plex Sans",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
   },
   fontWeights: {
+    thin: 100,
+    extralight: 200,
     light: 300,
     regular: 400,
     medium: 500,
@@ -19,5 +22,6 @@ export default {
     md: '672px',
     lg: '1056px',
     xl: '1312px',
+    max: '1700px',
   },
 }

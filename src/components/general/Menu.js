@@ -66,6 +66,7 @@ const ListItem = styled(motion.li)`
       justify-self: start;
     }
   }
+
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.text};

@@ -5,9 +5,9 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Scott Strubberg’s Portfolio`,
-    siteUrl: `https://strubberg.netlify.com`,
+    siteUrl: `https://scottstrubberg.com`,
     description: `This is a portfolio that represents the career of Scott Strubberg, through all of it’s many iterations.`,
-    author: `Scott Strubberg <sstrubberg@gmail.com>`,
+    author: `Scott Strubberg <sstrubberg@pm.me>`,
     linkedIn: `https://www.linkedin.com/in/sstrubberg/`,
     github: `https://github.com/sstrubberg`,
   },
@@ -79,7 +79,9 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Sans:300,300i,400,400i,500,500i,600,600i'],
+          families: [
+            'IBM Plex Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i',
+          ],
         },
       },
     },

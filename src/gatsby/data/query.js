@@ -1,3 +1,13 @@
+const Fluid = `
+  base64
+  aspectRatio
+  src
+  srcSet
+  srcWebp
+  srcSetWebp
+  sizes
+`
+
 module.exports.data = {
   projects: `
   {
@@ -9,6 +19,12 @@ module.exports.data = {
           date(formatString: "MMMM DD, YYYY")
           content {
             json
+          }
+          cover {
+            title
+            fluid {
+              ${Fluid}
+            }
           }
         }
       }

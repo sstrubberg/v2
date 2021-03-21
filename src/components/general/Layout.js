@@ -4,6 +4,7 @@ import { Global, css } from '@emotion/core'
 import Helmet from 'react-helmet'
 import { globalStyles } from '../../styles/globalStyles.js'
 import Menu from './Menu'
+import Transition from './Transition'
 
 const Root = styled.div`
   padding-top: 60px;
@@ -24,9 +25,9 @@ const Layout = ({ children, props }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <Menu />
-      <div {...props}>
+      <Transition {...props}>
         <Root>{children}</Root>
-      </div>
+      </Transition>
       <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}

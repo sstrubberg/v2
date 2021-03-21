@@ -8,12 +8,13 @@ import styled from '@emotion/styled'
 import useContentfulImage from '../../util/hooks/useContentfulImage'
 
 const Wrapper = styled.div`
+  background: ${props => props.theme.colors.background};
   font-family: ${props => props.theme.fonts.body};
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
 
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    /* padding: 2.5rem; */
+    /* padding: 2.5em 3em; */
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-column-gap: 0.75rem;

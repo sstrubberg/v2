@@ -15,7 +15,8 @@ const Footer = styled.footer`
   bottom: 0;
 `
 
-const Layout = ({ children, props }) => {
+const Layout = props => {
+  const { children } = props
   function handleFirstTab() {}
   return (
     <>

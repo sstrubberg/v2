@@ -2,6 +2,8 @@ import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Transition = ({ children, location }) => {
+  const time = 0.5
+
   const variants = {
     initial: {
       opacity: 0,
@@ -9,27 +11,26 @@ const Transition = ({ children, location }) => {
     enter: {
       opacity: 1,
       transition: {
-        duration: 0.35,
-        delay: 0.35,
+        duration: time,
+        delay: time,
         when: 'beforeChildren',
       },
     },
     exit: {
       opacity: 0,
       transition: {
-        duration: 0.35,
+        duration: time,
       },
     },
   }
   return (
     <AnimatePresence>
       <motion.main
-        key={location.pathname}
+        key={location.key}
         variants={variants}
         initial="initial"
         animate="enter"
         exit="exit"
-        id="main"
       >
         {children}
       </motion.main>

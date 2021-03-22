@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Content from '../components/templates/Content'
-import Hero from '../components/general/Hero'
+import Hero from '../components/templates/Hero'
 
 const ProjectTemplate = ({ pageContext }) => {
   const { title, content, cover } = pageContext
@@ -12,8 +12,7 @@ const ProjectTemplate = ({ pageContext }) => {
 
   return (
     <>
-      <Hero image={cover} />
-      <div>{title}</div>
+      <Hero image={cover} title={title} />
       <Content markdown={content} />
     </>
   )

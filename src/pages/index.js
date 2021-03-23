@@ -3,11 +3,11 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 // import Image from "../components/image"
 import '../styles/global.scss'
-import SEO from '../components/seo'
+import SEO from '../components/general/SEO'
 
 const IndexPage = () => (
   <>
-    <SEO title="Projects" />
+    <SEO />
     <div>this is the homepage</div>
   </>
 )

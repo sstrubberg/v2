@@ -4,12 +4,13 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: `Scott Strubberg’s Portfolio`,
+    title: `Scott Strubberg`,
     siteUrl: `https://scottstrubberg.com`,
     description: `This is a portfolio that represents the career of Scott Strubberg, through all of it’s many iterations.`,
     author: `Scott Strubberg <sstrubberg@pm.me>`,
     linkedIn: `https://www.linkedin.com/in/sstrubberg/`,
     github: `https://github.com/sstrubberg`,
+    image: `/og-SRP_4570.jpg`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -27,11 +28,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Scott Strubberg`,
+        short_name: `Scott Strubberg`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: require.resolve(`./static/favicon.png`), // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

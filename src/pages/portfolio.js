@@ -3,10 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import '../styles/global.scss'
 import SEO from '../components/general/SEO'
-
-const H2 = styled.h2`
-  color: white;
-`
+import PortfolioList from '../components/templates/PortfolioList'
 
 const PortfolioPage = () => {
   const data = useStaticQuery(graphql`
@@ -17,25 +14,24 @@ const PortfolioPage = () => {
             slug
             title
             date(formatString: "MMMM Do, YYYY")
+            cover {
+              title
+              fluid(maxWidth: 1000) {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
         }
       }
     }
   `)
 
+  const projects = data.allContentfulProject.edges
+
   return (
     <>
       <SEO title="Portfolio" />
-      <ol>
-        {data.allContentfulProject.edges.map(edge => (
-          <li key={edge.node.slug}>
-            <Link to={`${edge.node.slug}`}>
-              <H2>{edge.node.title}</H2>
-              <p></p>
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <PortfolioList projects={projects} />
     </>
   )
 }

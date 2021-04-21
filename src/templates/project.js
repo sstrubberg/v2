@@ -6,7 +6,6 @@ import Hero from '../components/templates/Hero'
 const ProjectTemplate = ({ pageContext }) => {
   const { title, content, cover } = pageContext
 
-  // console.log(pageContext)
   // const previous = pageContext.prev
   // const next = pageContext.next
 

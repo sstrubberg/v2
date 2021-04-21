@@ -5,10 +5,6 @@ import '../styles/global.scss'
 import SEO from '../components/general/SEO'
 import PortfolioList from '../components/templates/PortfolioList'
 
-const H2 = styled.h2`
-  color: white;
-`
-
 const PortfolioPage = () => {
   const data = useStaticQuery(graphql`
     query {

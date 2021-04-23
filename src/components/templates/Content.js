@@ -6,6 +6,7 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import useContentfulImage from '../../util/hooks/useContentfulImage'
+import useContentfulVideo from '../../util/hooks/useContentfulVideo'
 
 const Wrapper = styled.div`
   background: ${props => props.theme.colors.background};
@@ -84,6 +85,16 @@ const Wrapper = styled.div`
       color: ${props => props.theme.colors.hover};
     }
   }
+
+  video {
+    width: 100%;
+    pointer-events: none;
+    border: 2px solid ${props => props.theme.colors.secondary};
+
+    @media screen and (min-width: ${props => props.theme.responsive.md}) {
+      grid-column: 2 / span 14;
+    }
+  }
 `
 
 const options = {
@@ -93,11 +104,28 @@ const options = {
       const fluid = useContentfulImage(
         node.data.target.fields.file['en-US'].url
       )
-      return fluid ? (
-        <Img title={node.data.target.fields.title['en-US']} fluid={fluid} />
-      ) : (
-        undefined
+      const video = useContentfulVideo(
+        node.data.target.fields.file['en-US'].url
       )
+
+      if (fluid) {
+        return (
+          <Img title={node.data.target.fields.title['en-US']} fluid={fluid} />
+        )
+      }
+      if (video) {
+        return (
+          <video
+            preload="auto"
+            autoPlay
+            muted
+            loop
+            playsInline
+            src={video.file.url}
+          />
+        )
+      }
+      return undefined
     },
     [INLINES.HYPERLINK]: (node, children) => (
       <a href={node.data.uri}>{children}</a>

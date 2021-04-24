@@ -4,7 +4,7 @@ import Content from '../components/templates/Content'
 import Hero from '../components/templates/Hero'
 
 const ProjectTemplate = ({ pageContext }) => {
-  const { title, content, cover } = pageContext
+  const { title, content, cover, video, summary } = pageContext
 
   // const previous = pageContext.prev
   // const next = pageContext.next

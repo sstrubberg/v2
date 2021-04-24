@@ -12,8 +12,6 @@ const ProjectTemplate = ({ pageContext }) => {
   return (
     <>
       <Hero image={cover} title={title} />
-      {summary && <Summary summary={summary}></Summary>}
-      {video && <Video video={video} />}
       <Content markdown={content} />
     </>
   )

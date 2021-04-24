@@ -10,7 +10,7 @@ const Cover = styled(motion.div)`
   top: 60px;
   left: 0;
   right: 0;
-  width: 100%;
+  /* width: 100%; */
   z-index: -2;
   transform-origin: center bottom;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {

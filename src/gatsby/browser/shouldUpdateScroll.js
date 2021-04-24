@@ -1,4 +1,4 @@
-const transitionDelay = 350
+const transitionDelay = 450
 
 const scrollDelay = ({ routerProps: { location }, getSavedScrollPosition }) => {
   if (location.action === 'PUSH') {

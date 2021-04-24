@@ -2,8 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Content from '../components/templates/Content'
 import Hero from '../components/templates/Hero'
-import Video from '../components/templates/Video'
-import Summary from '../components/templates/Summary'
 
 const ProjectTemplate = ({ pageContext }) => {
   const { title, content, cover, video, summary } = pageContext

@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   font-family: ${props => props.theme.fonts.body};
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
+  display: none;
 
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     /* padding: 2.5em 3em; */
@@ -90,6 +91,7 @@ const Wrapper = styled.div`
     width: 100%;
     pointer-events: none;
     border: 2px solid ${props => props.theme.colors.secondary};
+    background: ${props => props.theme.colors.muted};
 
     @media screen and (min-width: ${props => props.theme.responsive.md}) {
       grid-column: 2 / span 14;

@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   background: ${props => props.theme.colors.background};
   font-family: ${props => props.theme.fonts.body};
   padding: 0 1.5rem;
-  /* width: 100%; */
+  width: 100%;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: grid;
     grid-template-columns: repeat(16, 1fr);

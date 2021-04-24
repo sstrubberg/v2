@@ -5,6 +5,7 @@ export default {
     background: '#222831', // almost black
     hover: '#00CBD6', // kara green
     secondary: '#292929',
+    muted: '#292929',
   },
   fonts: {
     body:

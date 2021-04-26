@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   font-family: ${props => props.theme.fonts.body};
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
-  display: none;
 
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     /* padding: 2.5em 3em; */

@@ -79,10 +79,8 @@ const ListItem = styled(motion.li)`
 `
 
 const BurgerWrapper = styled.div`
-  /* height: 60px; */
   position: absolute;
   top: 1rem;
-  /* bottom: 0; */
   right: 1.5rem;
 `
 

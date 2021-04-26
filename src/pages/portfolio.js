@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import '../styles/global.scss'
+// import '../styles/global.scss'
 import SEO from '../components/general/SEO'
 import PortfolioList from '../components/templates/PortfolioList'
 

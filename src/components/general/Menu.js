@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
+import cx from 'classnames'
 
 const Header = styled.header`
   font-family: ${props => props.theme.fonts.body};
@@ -37,17 +38,17 @@ const UnOrderedList = styled.ul`
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 0.75rem;
-    justify-items: end;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 1.75rem;
+    justify-items: center;
   }
 `
 
 const ListItem = styled(motion.li)`
   display: flex;
   justify-content: center;
-  padding-top: 1.3rem;
-  /* padding-bottom: 0.5rem; */
+  padding-top: 1rem;
+
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     opacity: 1 !important;
     pointer-events: auto;
@@ -62,7 +63,7 @@ const ListItem = styled(motion.li)`
     @media screen and (min-width: ${props => props.theme.responsive.md}) {
       position: relative;
       left: 0rem;
-      grid-column: 1 / span 10;
+      grid-column: 1 / span 13;
       justify-self: start;
     }
   }
@@ -77,15 +78,15 @@ const ListItem = styled(motion.li)`
   }
 `
 
-const ToggleWrapper = styled.div`
-  height: 60px;
+const BurgerWrapper = styled.div`
+  /* height: 60px; */
   position: absolute;
   top: 1rem;
-  bottom: 0;
+  /* bottom: 0; */
   right: 1.5rem;
 `
 
-const Toggle = styled.button`
+const Burger = styled.button`
   cursor: pointer;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: none;
@@ -95,9 +96,12 @@ const Toggle = styled.button`
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  function toggle() {
+  const toggle = () => {
     setIsOpen(!isOpen)
-    document.querySelector('.hamburger--collapse').classList.toggle('is-active')
+  }
+
+  const close = () => {
+    setIsOpen(false)
   }
 
   const listItemVariants = {
@@ -112,18 +116,22 @@ const Menu = () => {
   return (
     <Header open={isOpen}>
       <Nav>
-        <ToggleWrapper>
-          <Toggle
+        <BurgerWrapper>
+          <Burger
             open={isOpen}
             onClick={toggle}
-            className="hamburger hamburger--collapse"
+            className={cx('hamburger hamburger--collapse', [
+              isOpen ? 'is-active' : null,
+            ])}
             type="button"
+            aria-label="Menu"
+            aria-controls="navigation"
           >
             <span className="hamburger-box">
               <span className="hamburger-inner"></span>
             </span>
-          </Toggle>
-        </ToggleWrapper>
+          </Burger>
+        </BurgerWrapper>
         <UnOrderedList open={isOpen}>
           <ListItem
             initial={false}
@@ -137,14 +145,27 @@ const Menu = () => {
             variants={listItemVariants}
             animate={isOpen ? 'open' : 'closed'}
           >
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/portfolio" onClick={close}>
+              Portfolio
+            </Link>
           </ListItem>
           <ListItem
             initial={false}
             variants={listItemVariants}
             animate={isOpen ? 'open' : 'closed'}
           >
-            <Link to="/contact">Contact</Link>
+            <Link to="/uses" onClick={close}>
+              Uses
+            </Link>
+          </ListItem>
+          <ListItem
+            initial={false}
+            variants={listItemVariants}
+            animate={isOpen ? 'open' : 'closed'}
+          >
+            <Link to="/contact" onClick={close}>
+              Contact
+            </Link>
           </ListItem>
         </UnOrderedList>
       </Nav>

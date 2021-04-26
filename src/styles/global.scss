@@ -1,1 +1,5 @@
-@import "./hamburger.scss";
+// Custom over-rides
+@import "./custom-hamburger.scss";
+
+// Import from node_modules
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";

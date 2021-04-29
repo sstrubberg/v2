@@ -4,8 +4,8 @@ export default {
     text: '#eeeeee', // cool light gray
     background: '#222831', // almost black
     hover: '#00CBD6', // kara green
-    secondary: '#292929',
-    muted: '#292929',
+    secondary: '#393e46',
+    muted: '#393e46',
   },
   fonts: {
     body:

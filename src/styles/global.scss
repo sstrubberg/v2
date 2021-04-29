@@ -1,5 +1,7 @@
 // Custom over-rides
 @import "./custom-hamburger.scss";
 
-// Import from node_modules
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+// Import from node_modules. Breaks down when you refresh the pages.
+// @import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+
+@import "../util/hamburgers/hamburgers.scss";

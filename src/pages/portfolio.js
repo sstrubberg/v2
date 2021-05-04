@@ -13,6 +13,9 @@ const PortfolioPage = () => {
             slug
             title
             date(formatString: "MMMM Do, YYYY")
+            content {
+              json
+            }
             cover {
               title
               fluid(maxWidth: 1000) {

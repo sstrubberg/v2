@@ -55,7 +55,10 @@ const Wrapper = styled.div`
   }
 
   h1,
-  h2,
+  h2 {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
   h3,
   h4,
   h5,

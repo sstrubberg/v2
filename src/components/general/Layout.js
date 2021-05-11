@@ -11,8 +11,8 @@ const Root = styled.div`
 `
 
 const Footer = styled.footer`
-  left: 0;
-  bottom: 0;
+  /* left: 0;
+  bottom: 0; */
 `
 
 const Layout = props => {

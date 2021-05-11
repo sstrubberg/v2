@@ -6,44 +6,47 @@ import hands from './Hands'
 const Wrapper = styled.div`
   display: grid;
   grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
-  /* min-height: calc(90vh); */
-  /* align-items: center; */
-  /* justify-items: center; */
-  /* padding: 2.5rem 1.5rem; */
-
+  padding: 2.5rem 1.5rem;
+  height: 100vh;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    grid-template-rows: repeat(6, 1fr);
-
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    grid-template-rows: repeat(8, 1fr);
+    grid-row-gap: 0.5rem;
+    padding: 2.5rem 3rem;
   }
 `
 
 const H1 = styled.h1`
-  grid-row: 2;
-  grid-column: 2 / span 6;
+  grid-row: 3;
+  /* grid-column: 2 / span 6; */
   font-family: ${props => props.theme.fonts.body};
   font-size: 1.75rem;
   font-weight: ${props => props.theme.fontWeights.semibold};
-  align-self: center;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    font-size: 4em;
+    font-size: 3em;
   }
   @media screen and (min-width: ${props => props.theme.responsive.lg}) {
-    font-size: 5em;
+    font-size: 4em;
   }
 `
 
 const Description = styled.p`
-  grid-row: 3;
-  grid-column: 2 / span 6;
+  grid-row: 4;
   font-family: ${props => props.theme.fonts.body};
   font-size: 1.2rem;
+  padding-top: 1rem;
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    width: 75%;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.lg}) {
+    width: 75%;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.xl}) {
+    width: 60%;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.xl}) {
+    width: 50%;
+  }
 `
 
 const Hand = styled(motion.span)`
@@ -83,8 +86,10 @@ const Intro = () => {
         Howdy, I’m Scott. <WavingHand />
       </H1>
       <Description>
-        A front-end developer, father, teacher, design thinker, husband,
-        technologist, and human.
+        A front-end developer, father, teacher, design thinker, husband, and
+        technologist. I’m passionate about creating environments for users and
+        learners to feel empowered when using technology to succeed in their
+        outcomes.
       </Description>
     </Wrapper>
   )

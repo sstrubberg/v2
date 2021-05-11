@@ -4,6 +4,7 @@ import '../styles/global.scss'
 import SEO from '../components/general/SEO'
 import Intro from '../components/index/Intro'
 import WhatImWorkingOn from '../components/index/WhatImWorkingOn'
+import ContactMe from '../components/index/ContactMe'
 
 export const query = graphql`
   query INDEX_PAGE {
@@ -17,6 +18,7 @@ export const query = graphql`
             }
             description
           }
+          slug
         }
       }
     }
@@ -31,6 +33,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Intro />
       <WhatImWorkingOn latestProject={latestProject} />
+      <ContactMe />
     </>
   )
 }

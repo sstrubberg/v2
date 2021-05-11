@@ -3,6 +3,51 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
+
+const Container = styled(motion.div)`
+  /* display: grid; */
+  /* grid-template-rows: repeat(4, 1fr); */
+  /* grid-row-gap: 0.5rem; */
+  padding: 2.5rem 1.5rem;
+  height: 90vh;
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0.5rem;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.lg}) {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 2.5rem 3rem;
+  }
+`
+
+const StyledLink = styled(Link)`
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    grid-column: 3 / span 2;
+  }
+  @media screen and (min-width: ${props => props.theme.responsive.lg}) {
+    grid-column: 4 / span 3;
+  }
+`
+
+const Image = styled(Img)`
+  /* grid-column: 2 / span 6; */
+  /* grid-row: 2; */
+  /* padding: 2.5rem 1.5rem; */
+`
+
+const ProjectsParagraph = styled.p`
+  grid-column: 1 / span 2;
+  font-family: ${props => props.theme.fonts.body};
+  font-size: 1.2rem;
+  padding-top: 2rem;
+  grid-row: 1;
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    padding-top: 0rem;
+  }
+`
 
 const WhatImWorkingOn = props => {
   const { latestProject } = props
@@ -11,34 +56,41 @@ const WhatImWorkingOn = props => {
   const variants = {
     visible: {
       opacity: 1,
-      x: 0,
     },
     hidden: {
-      opacity: 0,
-      x: -100,
+      opacity: 1,
     },
   }
 
-  const Container = styled.div`
-    height: 100vh;
-  `
   return (
-    <div style={{ height: '100vh' }}>
-      <motion.div
-        ref={ref}
-        variants={variants}
-        animate={isVisible ? 'visible' : 'hidden'}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        style={{ marginLeft: '50px' }}
-      >
-        <h1>Hey I'm on the screen</h1>
-        <Img
-          style={{ borderRadius: '30px' }}
+    <Container
+      ref={ref}
+      variants={variants}
+      animate={isVisible ? 'visible' : 'hidden'}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
+      <StyledLink to={`/portfolio/${latestProject.slug}`}>
+        <Image
           alt={latestProject.description}
-          fluid={{ ...latestProject.cover.fluid }}
+          fluid={{ ...latestProject.cover.fluid, aspectRatio: 1 / 1 }}
         />
-      </motion.div>
-    </div>
+      </StyledLink>
+      <ProjectsParagraph>
+        Checkout my{' '}
+        <Link style={{ color: '#FFF' }} to={`/portfolio/${latestProject.slug}`}>
+          latest project.
+        </Link>{' '}
+        <br />
+        <br />
+        <p>
+          You can also take a look at my entire{' '}
+          <Link style={{ color: '#FFF' }} to="/portfolio">
+            portfolio
+          </Link>{' '}
+          of work.
+        </p>
+      </ProjectsParagraph>
+    </Container>
   )
 }
 

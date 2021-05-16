@@ -14,11 +14,9 @@ const Container = styled.div`
 `
 
 const Paragraph = styled.p`
-  /* grid-column: 2 / span 6; */
   grid-row: 4;
   font-family: ${props => props.theme.fonts.body};
   font-size: 1.2rem;
-  /* grid-row: 2; */
 `
 
 const ContactMe = props => (

@@ -6,11 +6,15 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 const Container = styled.div`
+  min-height: 90vh;
   height: 100vw;
   display: grid;
   grid-template-rows: repeat(8, 1fr);
   grid-row-gap: 0.5rem;
   padding: 2.5rem 1.5rem;
+  @media screen and (min-width: ${props => props.theme.responsive.md}) {
+    padding: 2.5rem 3rem;
+  }
 `
 
 const Paragraph = styled.p`

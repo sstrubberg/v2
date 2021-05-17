@@ -7,7 +7,7 @@ module.exports = {
     title: `Scott Strubberg`,
     siteUrl: `https://scottstrubberg.com`,
     description: `This is a portfolio that represents the career of Scott Strubberg, through all of it’s many iterations.`,
-    author: `Scott Strubberg <sstrubberg@pm.me>`,
+    author: `Scott Strubberg <sstrubberg@protonmail.com>`,
     linkedIn: `https://www.linkedin.com/in/sstrubberg/`,
     github: `https://github.com/sstrubberg`,
     image: `/og-SRP_4570.jpg`,

@@ -16,32 +16,27 @@ const StyledFooter = styled.footer`
     padding: 2.5rem 3rem;
   }
   a {
-    color: ${props => props.theme.colors.text};
-    transition: color 0.3s;
-    :hover {
-      color: ${props => props.theme.colors.hover};
+    justify-self: center;
+    &:first-of-type {
+      grid-column: 2;
     }
-  }
-  svg:first-of-type {
-    grid-column: 2;
-
-    /* grid-column-start: 2; */
-    /* justify-content: center;
-    align-items: center; */
+    svg {
+      fill: white;
+      transition: all 0.3s;
+      :hover {
+        fill: ${props => props.theme.colors.hover};
+        transform: scale(1.2);
+      }
+    }
   }
 `
 
 const SiteBuilt = styled.p`
   grid-row: 2;
-  @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    display: inline;
-  }
-`
-
-const LogoWrapper = styled.div`
-  @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    display: inline;
-  }
+  grid-column: 2 / span 4;
+  padding-top: 1rem;
+  /* justify-self: center; */
+  text-align: center;
 `
 
 const Footer = ({ Github, LinkedIn, Medium, Instagram }) => {
@@ -57,15 +52,30 @@ const Footer = ({ Github, LinkedIn, Medium, Instagram }) => {
       <SiteBuilt>
         Last built on {site.buildTime}, with
         {` `}
-        <a alt="Gatsby's website" href="https://www.gatsbyjs.org">
+        <a
+          style={{ color: 'white' }}
+          alt="Gatsby's website"
+          href="https://www.gatsbyjs.org"
+        >
           Gatsby
         </a>
       </SiteBuilt>
 
-      <Github />
-      <LinkedIn />
-      <Medium />
-      <Instagram />
+      <a href="https://github.com/sstrubberg" alt="Scott's Github profile">
+        <Github />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/sstrubberg/"
+        alt="Scott's Linkedin profile"
+      >
+        <LinkedIn />
+      </a>
+      <a href="https://medium.com/@sstrubberg" alt="Scott's Medium account">
+        <Medium />
+      </a>
+      <a href="https://www.instagram.com/scottstru/" alt="Scott's Instagram">
+        <Instagram />
+      </a>
     </StyledFooter>
   )
 }
@@ -74,7 +84,6 @@ const GithubLogo = () => (
   <svg
     height="32"
     role="img"
-    fill="#FFF"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -86,7 +95,6 @@ const GithubLogo = () => (
 const LinkedInLogo = () => (
   <svg
     height="32"
-    fill="#FFF"
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +107,6 @@ const LinkedInLogo = () => (
 const MediumLogo = () => (
   <svg
     height="32"
-    fill="#FFF"
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +119,6 @@ const MediumLogo = () => (
 const InstagramLogo = () => (
   <svg
     height="32"
-    fill="#FFF"
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

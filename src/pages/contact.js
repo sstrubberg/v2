@@ -24,7 +24,6 @@ const H1 = styled.h1`
 `
 
 const StyledLink = styled.a`
-  /* text-decoration: none; */
   color: ${props => props.theme.colors.text};
   transition: color 0.3s;
   :hover {
@@ -38,8 +37,11 @@ const Contact = () => (
     <Wrapper>
       <H1>
         This will eventually be a form 💌. Until then{' '}
-        <StyledLink href="mailto:sstrubberg@protonmail.com">
-          send me note
+        <StyledLink
+          alt="Send an email to Scott"
+          href="mailto:sstrubberg@protonmail.com"
+        >
+          send me a note
         </StyledLink>
         .
       </H1>

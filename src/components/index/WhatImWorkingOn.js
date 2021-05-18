@@ -11,6 +11,8 @@ const Container = styled(motion.div)`
   /* grid-row-gap: 0.5rem; */
   padding: 2.5rem 1.5rem;
   height: 90vh;
+  min-height: 50vh;
+
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     display: grid;
 

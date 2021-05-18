@@ -5,14 +5,10 @@ import Helmet from 'react-helmet'
 import { globalStyles } from '../../styles/globalStyles.js'
 import Menu from './Menu'
 import Transition from './Transition'
+import Footer from './Footer'
 
 const Root = styled.div`
   padding-top: 60px;
-`
-
-const Footer = styled.footer`
-  /* left: 0;
-  bottom: 0; */
 `
 
 const Layout = props => {
@@ -26,11 +22,7 @@ const Layout = props => {
       <Transition {...props}>
         <Root>{children}</Root>
       </Transition>
-      <Footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </Footer>
+      <Footer />
     </>
   )
 }

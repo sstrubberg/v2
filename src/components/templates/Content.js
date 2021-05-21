@@ -55,17 +55,14 @@ const Wrapper = styled.div`
   }
 
   h1,
-  h2 {
-    font-size: 2rem;
-    padding-top: 1rem;
-  }
+  h2,
   h3,
   h4,
   h5,
   h6 {
     font-weight: ${props => props.theme.fontWeights.medium};
     line-height: 1.15;
-    margin: 0 0 1.25rem;
+    margin: 0 0 2rem;
   }
 
   h1 {
@@ -75,8 +72,31 @@ const Wrapper = styled.div`
     }
   }
 
+  h2 {
+    font-size: 1.5555em;
+    @media screen and (min-width: ${props => props.theme.responsive.medium}) {
+      font-size: 2.074em;
+    }
+  }
+
+  ul,
+  ol {
+    line-height: 1.5;
+    margin-bottom: 1.25em;
+    padding: 0 0 0 1rem;
+    li {
+      position: relative;
+    }
+  }
+
+  ul {
+    li {
+      list-style: disc;
+    }
+  }
+
   p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     font-size: 1.266rem;
     font-weight: ${props => props.theme.fontWeights.light};
   }
@@ -94,6 +114,7 @@ const Wrapper = styled.div`
     pointer-events: none;
     border: 2px solid ${props => props.theme.colors.secondary};
     background: ${props => props.theme.colors.muted};
+    margin: 0 0 4rem;
 
     @media screen and (min-width: ${props => props.theme.responsive.md}) {
       grid-column: 2 / span 14;

@@ -32,8 +32,8 @@ const IndexPage = ({ data }) => {
     <>
       <SEO title="Home" />
       <Intro />
-      <WhatImWorkingOn latestProject={latestProject} />
-      <ContactMe />
+      {/* <WhatImWorkingOn latestProject={latestProject} /> */}
+      {/* <ContactMe /> */}
     </>
   )
 }

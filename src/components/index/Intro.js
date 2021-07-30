@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   grid-template-rows: repeat(8, 1fr);
   grid-row-gap: 0.5rem;
   padding: 2.5rem 1.5rem;
-  height: 83vh;
+  height: 100vh;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     grid-template-rows: repeat(8, 1fr);
     grid-row-gap: 0.5rem;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 
 const H1 = styled.h1`
-  grid-row: 4;
+  grid-row: 3;
   /* grid-column: 2 / span 6; */
   font-family: ${props => props.theme.fonts.body};
   font-size: 1.75rem;
@@ -31,7 +31,7 @@ const H1 = styled.h1`
 `
 
 const Description = styled.p`
-  grid-row: 5;
+  grid-row: 4;
   font-family: ${props => props.theme.fonts.body};
   font-size: 1.2rem;
   padding-top: 1rem;

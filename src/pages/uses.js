@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import SEO from '../components/general/SEO'
 
 const Wrapper = styled.div`
-  height: 90vh;
+  height: 83vh;
   display: grid;
   justify-content: center;
   align-items: center;

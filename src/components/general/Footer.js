@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   padding: 2.5rem 1.5rem;
   font-family: ${props => props.theme.fonts.body};
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
-    padding: 2.5rem 3rem;
+    /* padding: 3.5rem 3rem; */
   }
   a {
     justify-self: center;

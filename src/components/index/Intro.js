@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   grid-template-rows: repeat(8, 1fr);
   grid-row-gap: 0.5rem;
   padding: 2.5rem 1.5rem;
-  height: 75vh;
+  height: 100vh;
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     grid-template-rows: repeat(8, 1fr);
     grid-row-gap: 0.5rem;

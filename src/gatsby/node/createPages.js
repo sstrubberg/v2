@@ -7,16 +7,18 @@ module.exports = async ({ graphql, actions }) => {
   // Create a page for each project
   const projectsQuery = await graphql(query.data.projects)
   const projects = projectsQuery.data.allContentfulProject.edges
-  projects.forEach((project, i) => {
+  projects.forEach((project, index) => {
     const selected = project.node
-    // const next = i === 0 ? null : projects[i - 1].node
-    // console.log(next)
+    const next = index === projects.length - 1 ? null : projects[index + 1].node
+    const prev = index === 0 ? null : projects[index - 1].node
+
     createPage({
       path: `/portfolio/${project.node.slug}`,
       component: path.resolve(`./src/templates/project.js`),
       context: {
         ...selected,
-        // next,
+        prev,
+        next,
       },
     })
   })

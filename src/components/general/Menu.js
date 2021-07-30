@@ -38,7 +38,7 @@ const UnOrderedList = styled.ul`
   @media screen and (min-width: ${props => props.theme.responsive.md}) {
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 1.75rem;
     justify-items: center;
   }
@@ -63,7 +63,7 @@ const ListItem = styled(motion.li)`
     @media screen and (min-width: ${props => props.theme.responsive.md}) {
       position: relative;
       left: 0rem;
-      grid-column: 1 / span 13;
+      grid-column: 1 / span 9;
       justify-self: start;
     }
   }
